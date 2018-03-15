@@ -1,0 +1,105 @@
+# School server 1 DHCP Server Configuration file.
+#
+ddns-update-style interim;
+#ignore client-updates;
+
+option domain-name "{{ iiab_domain }}";
+option domain-name-servers      172.18.96.1;
+option ntp-servers              172.18.96.1;
+
+class "xo" {
+        match if substring(hardware,1,3)=00:17:c4
+              or substring(hardware,1,3)=20:7c:8f
+              or substring(hardware,1,3)=20:68:9d
+              or substring(hardware,1,3)=68:a3:c4
+              or substring(hardware,1,3)=74:de:2b
+              or substring(hardware,1,3)=9c:b7:0d
+              or substring(hardware,1,3)=44:6d:57
+              or substring(hardware,1,3)=74:e5:43
+              or substring(hardware,1,3)=20:68:9d
+              or substring(hardware,1,3)=20:16:d8
+              or substring(hardware,1,3)=2c:d0:5a
+              or substring(hardware,1,3)=24:fd:52
+              or substring(hardware,1,3)=48:d2:24
+              or substring(hardware,1,3)=a4:db:30
+              or substring(hardware,1,3)=40:f0:2f
+              or substring(hardware,1,3)=28:e3:47
+              or substring(hardware,1,3)=b8:ee:65
+              or substring(hardware,1,3)=18:cf:5e
+              or substring(hardware,1,3)=30:10:b3
+              or substring(hardware,1,3)=ac:b5:7d
+              or substring(hardware,1,3)=d0:53:49
+              or substring(hardware,1,3)=ac:e0:10
+              or substring(hardware,1,3)=b8:86:87;
+}
+
+subnet 172.18.96.0 netmask 255.255.224.0 {
+        option routers                  172.18.96.1;
+        option subnet-mask              255.255.224.0;
+        option broadcast-address        172.18.127.255;
+        # this is the whole range we have available - 8K addresses
+        # range                           172.18.96.2 172.18.127.254;
+        # instead, we'll save 510 addresses for later.
+
+        # range                           172.18.96.2 172.18.125.254;
+
+        # the other /24s:
+        # -> 172.18.126.0/24 for static IP addresses
+        #    for printers, AP management consoles, etc.
+        # -> 172.18.127.0/24 for temporary addresses for
+        #    XO activation
+
+        # As this subnet is wired or wifi a/b/g, these lease
+        #    times are on the long side
+
+        # Rango para XO
+        pool {
+                range 172.18.96.2 172.18.123.254;
+                allow members of "xo";
+        }
+        
+        # Rango para no-XO
+        pool {
+                range 172.18.125.1 172.18.125.254;
+                deny members of "xo";
+        }
+        
+        # German
+        host zplay {
+                hardware ethernet f4:f5:24:dd:81:c9;
+                fixed-address 172.18.124.10;
+        }
+        
+        # German
+        host iphone {
+                hardware ethernet 5c:97:f3:3a:10:7e;
+                fixed-address 172.18.124.20;
+        }
+        
+        # German
+        host amz-fire {
+                hardware ethernet 34:d2:70:42:a4:4a;
+                fixed-address 172.18.124.30;
+        }
+
+        # German
+        #host t420 {
+        #        hardware ethernet 34:d2:70:42:a4:4a;
+        #        fixed-address 172.18.124.40;
+        #}
+        
+        # German
+        #host t410 {
+        #        hardware ethernet 34:d2:70:42:a4:4a;
+        #        fixed-address 172.18.124.50;
+        #}
+        
+        # German
+        #host x200 {
+        #        hardware ethernet 34:d2:70:42:a4:4a;
+        #        fixed-address 172.18.124.60;
+        #}
+
+        default-lease-time      10800;
+        max-lease-time          21600;
+}
