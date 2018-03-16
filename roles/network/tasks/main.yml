@@ -1,9 +1,8 @@
 - name: Copia de archivos al template de iiab
-  template: src={{ item.src }}
-            dest={{ item.dest }}
-            owner=root
-            group=root
-            mode={{ item.mode }}
+  copy: src={{ item.src }}
+        dest={{ item.dest }}
+        owner=root
+        mode={{ item.mode }}
   with_items:
         - { src: 'dhcpd-iiab.conf.j2-g', dest: '/opt/iiab/iiab/roles/network/templates/dhcp/dhcpd-iiab.conf.j2', mode: '0644' }
         - { src: 'iiab-gen-iptables-g', dest: '/opt/iiab/iiab/roles/network/templates/gateway/named-iiab.conf.j2', mode: '0644' }
