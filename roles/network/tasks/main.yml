@@ -5,5 +5,6 @@
         mode={{ item.mode }}
   with_items:
         - { src: 'dhcpd-iiab.conf.j2-g', dest: '/opt/iiab/iiab/roles/network/templates/dhcp/dhcpd-iiab.conf.j2', mode: '0644' }
-        - { src: 'iiab-gen-iptables-g', dest: '/opt/iiab/iiab/roles/network/templates/gateway/named-iiab.conf.j2', mode: '0644' }
+        - { src: 'named-iiab.conf.j2-g', dest: '/opt/iiab/iiab/roles/network/templates/gateway/named-iiab.conf.j2', mode: '0644' }
         - { src: 'iiab-gen-iptables-g', dest: '/opt/iiab/iiab/roles/network/templates/named/iiab-gen-iptables', mode: '755' }
+        - { src: 'sampler.html', dest: '/opt/iiab/iiab-menu/samples/sampler.html', mode: '755' }
