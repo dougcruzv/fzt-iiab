@@ -57,7 +57,6 @@ subnet 172.18.96.0 netmask 255.255.224.0 {
                 range 172.18.96.2 172.18.123.254;
                 allow members of "xo";
         }
-        
         # Rango para no-XO
         pool {
                 range 172.18.125.1 172.18.125.254;
@@ -68,35 +67,31 @@ subnet 172.18.96.0 netmask 255.255.224.0 {
                 hardware ethernet f4:f5:24:dd:81:c9;
                 fixed-address 172.18.124.10;
         }
-        
         # German
         host iphone {
                 hardware ethernet 5c:97:f3:3a:10:7e;
                 fixed-address 172.18.124.20;
         }
-        
         # German
         host amz-fire {
                 hardware ethernet 34:d2:70:42:a4:4a;
                 fixed-address 172.18.124.30;
         }
-
         # German
         host t420 {
                 hardware ethernet 34:d2:70:42:a4:4a;
                 fixed-address 172.18.124.40;
         }
-        
         # German
         host t410 {
                 hardware ethernet 34:d2:70:42:a4:4a;
                 fixed-address 172.18.124.50;
         }
-        
         # German
         host x200 {
                 hardware ethernet 34:d2:70:42:a4:4a;
                 fixed-address 172.18.124.60;
+	}
         # WLAN XIAOMI
         host wlan {
                 hardware ethernet a0:c5:89:52:68:fe;
