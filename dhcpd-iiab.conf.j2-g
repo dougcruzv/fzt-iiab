@@ -95,17 +95,17 @@ subnet 172.18.96.0 netmask 255.255.224.0 {
         # WLAN XIAOMI
         host wlan {
                 hardware ethernet a0:c5:89:52:68:fe;
-                fixed-address 172.18.124.10;
+                fixed-address 172.18.124.7;
         }
         # LAN XIAOMI
         host lan {
                 hardware ethernet 9c:eb:e8:2c:de:38;
-                fixed-address 172.18.124.20;
+                fixed-address 172.18.124.17;
         }
         # Xiaomi - Luis
         host cel {
                 hardware ethernet f4:09:d8:75:40:86;
-                fixed-address 172.18.124.30;
+                fixed-address 172.18.124.27;
         }
 
         default-lease-time      10800;
