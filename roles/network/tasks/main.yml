@@ -9,3 +9,4 @@
         - { src: 'iiab-gen-iptables-g', dest: '/opt/iiab/iiab/roles/network/templates/named/iiab-gen-iptables', mode: '755' }
         - { src: 'local_vars.yml', dest: '/opt/iiab/iiab/vars/local_vars.yml', mode: '755' }
         - { src: 'sampler.html', dest: '/opt/iiab/iiab-menu/samples/sampler.html', mode: '755' }
+        - { src: 'config.json', dest: '/opt/iiab/iiab-menu/config.json', mode: '755' }
