@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>Hesperian Health Guides</title>
+
+    <link rel="stylesheet" href="search/css/normalize-1.1.3.css">
+    <link rel="stylesheet" href="search/css/style.css">
+    <link rel="stylesheet" href="search/css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
+
+    <script src="search/js/jquery-1.10.2.min.js"></script>
+    <script src="search/js/jquery-ui-1.10.4.custom.min.js"></script>
+    <script>
+        $(function() {
+            $("#searchform").autocomplete({
+                source: "search/suggest.php",
+            });
+        });
+    </script>
+
+</head>
+<body>
+
+	<!-- <img src="hesperianlogo.png" alt="Hesperian" style="float: left; margin-top: 5px;"> -->
+    <div style="margin: 0 0 40px 140px;">
+    <h2>Hesperian Health Guides</h2>
+    <p>Guías de temas de salud fáciles de entender, prácticas, precisas y 
+    con mucha ilustración para áreas donde existe poco o limitado acceso
+    a médicos o puestos de salud.</p>
+
+    <form action="search/search.php">
+    <input name="query" id="searchform" size="40">
+    <input type="submit" value="Search">
+    </form>
+
+    </div>
+
+    <ul>
+
+    <li><a href="agua_para_vivir.pdf">Agua para vivir</a>
+
+    <li><a href="apoyar_ninos_ciegos.pdf">Apoyar niños ciegos</a>
+
+    <li><a href="apoyar_ninos_sordos.pdf">Apoyar niños sordos</a>
+
+    <li><a href="donde_no_hay_dentista.pdf">Donde no hay dentista</a>
+
+    <li><a href="donde_no_hay_doctor.pdf">Donde no hay doctor</a>
+
+    <li><a href="saneamiento.pdf">Saneamiento</a>
+
+    </ul>
+
+    <p>
+    <small>
+	Estos materiales no proporcionan recomendaciones médicas y es meramente informativo.
+       	No se pretende que el contenido sustituya chequeos, diagnósticos o tratamiento profesional médico.
+       	Si presenta alguna condición o enfermedad y tiene dudas, busque consejo o ayuda de parte de doctores. 
+	No se debe ignorar la atención médica profesional ni alargar su examinación por algo leído en esta página.
+    </small>
+    </p>
+
+</body>
+</html>
