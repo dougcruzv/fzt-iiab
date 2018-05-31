@@ -15,7 +15,7 @@ apt -y dist-upgrade
 apt -y clean
 # Above updates OS for security especially
 
-apt -y install git vim tmux dirmngr 
+apt -y install vim tmux dirmngr 
 
 echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" >> /etc/apt/sources.list
 
@@ -30,9 +30,7 @@ git clone https://github.com/iiab/iiab-admin-console --depth 1
 git clone https://github.com/iiab/iiab-menu --depth 1
 git clone https://github.com/iiab/iiab-factory --depth 1
 
-cd /home/
-git clone https://github.com/lagm777/fzt-iiab
-cd fzt-iiab/
+cd /home/fzt-iiab/
 ./config
 
 # In general please examine local_vars.yml carefully (and modify as nec)
