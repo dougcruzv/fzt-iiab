@@ -11,4 +11,3 @@
         - { src: 'sampler.html', dest: '/opt/iiab/iiab-menu/samples/sampler.html', mode: '755' }
         - { src: 'config.json', dest: '/opt/iiab/iiab-menu/config.json', mode: '755' }
         - { src: 'es-blockly_games.json', dest: '/opt/iiab/iiab-menu/menu-files/menu-defs/es-blockly_games.json', mode: '644' }
-        - { src: 'en-worldmap-10.json', dest: '/opt/iiab/iiab-menu/menu-files/menu-defs/en-worldmap-10.json', mode: '644' }
