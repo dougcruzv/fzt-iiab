@@ -64,6 +64,7 @@ export KALITE_HOME=/library/ka-lite
 kalite manage generate_zone
 # Register with KA Lite - just the anonymous registration
 kalite manage retrievecontentpack download en
+kalite manage retrievecontentpack download es
 # Get KA Lite English language pack (slow download!)
 
 reboot
