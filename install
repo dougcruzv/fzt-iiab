@@ -15,17 +15,9 @@ apt -y dist-upgrade
 apt -y clean
 # Above updates OS for security especially
 
-apt -y install vim tmux dirmngr 
-
-echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" >> /etc/apt/sources.list
-
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
-apt -y update
-apt -y install ansible
-
 mkdir -p /opt/iiab
 cd /opt/iiab/
-git clone https://github.com/iiab/iiab --depth 1
+git clone https://github.com/iiab/iiab -b release-6.5 --depth 1
 git clone https://github.com/iiab/iiab-admin-console --depth 1
 git clone https://github.com/iiab/iiab-menu --depth 1
 git clone https://github.com/iiab/iiab-factory --depth 1
@@ -63,8 +55,11 @@ iiab-make-kiwix-lib
 export KALITE_HOME=/library/ka-lite
 kalite manage generate_zone
 # Register with KA Lite - just the anonymous registration
-kalite manage retrievecontentpack download en
 kalite manage retrievecontentpack download es
+kalite manage retrievecontentpack download en
 # Get KA Lite English language pack (slow download!)
+
+#Agregando contenido
+/home/fzt-iiab/./contenido
 
 reboot
