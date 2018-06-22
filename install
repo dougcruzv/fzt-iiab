@@ -22,6 +22,12 @@ git clone https://github.com/iiab/iiab-admin-console --depth 1
 git clone https://github.com/iiab/iiab-menu --depth 1
 git clone https://github.com/iiab/iiab-factory --depth 1
 
+cd /opt/iiab/iiab/scripts/
+./ansible
+# Installs latest Ansible from PPA
+# ./ansible-2.4.x
+# ./ansible-2.5.x
+
 cd /home/fzt-iiab/
 ./config
 
@@ -30,12 +36,6 @@ cd /home/fzt-iiab/
 
 # NOTE: you can change many/most settings after install too, using the
 # Admin Console (http://box/admin) as documented at: http://FAQ.IIAB.IO
-
-cd /opt/iiab/iiab/scripts/
-./ansible
-# Installs latest Ansible from PPA
-# ./ansible-2.4.x
-# ./ansible-2.5.x
 
 cd /opt/iiab/iiab/
 ./iiab-install
