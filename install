@@ -62,4 +62,6 @@ kalite manage retrievecontentpack download en
 #Agregando contenido
 /home/fzt-iiab/./contenido
 
+#Configuracion de calibre server
+/home/fzt-iiab/./calibre
 reboot
