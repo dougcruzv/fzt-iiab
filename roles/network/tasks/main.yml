@@ -11,3 +11,6 @@
         - { src: 'sampler.html', dest: '/opt/iiab/iiab-menu/samples/sampler.html', mode: '755' }
         - { src: 'config.json', dest: '/opt/iiab/iiab-menu/config.json', mode: '755' }
         - { src: 'es-blockly_games.json', dest: '/opt/iiab/iiab-menu/menu-files/menu-defs/es-blockly_games.json', mode: '644' }
+        - { src: 'es-file_share.png', dest: '/opt/iiab/iiab-menu/menu-files/images/es-file_share.png', mode: '644' }
+        - { src: 'es-file_share.html', dest: '/opt/iiab/iiab-menu/menu-files/menu-defs/es-file_share.png', mode: '644' }
+        - { src: 'es-file_share.json', dest: '/opt/iiab/iiab-menu/menu-files/menu-defs/es-file_share.json', mode: '644' }
