@@ -142,3 +142,11 @@ rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-soluciones /
 rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/en-worldmap-10 /library/working/rachel/
 ./oer2go_install_move.sh en-worldmap-10
 
+#File Share
+rsync -Pavz rsync://dev.worldpossible.org/rachelmods/es-file_share /library/www/html/modules/
+
+#PhET
+rsync -Pavz rsync://dev.worldpossible.org/rachelmods/es-phet-zim /library/www/html/modules/
+
+#GCF2015
+rsync -Pavz rsync://dev.worldpossible.org/rachelmods/es-GCF2015 /library/www/html/modules/
