@@ -1,0 +1,20 @@
+{
+ "rating": "3.0",
+ "intended_use":"html",
+ "lang" : "es",
+ "age_range": "children,young adult,adult",
+ "zip_ftp_url": null,
+ "module_id": "58",
+ "is_hidden": false,
+ "category": "educational",
+ "title": "Compartir Archivos",
+ "prereq_id": null,
+ "moddir": "es-file_share",
+ "ksize": "18363684",
+ "logo_url": "es-file_share.png",
+ "description": "Este es un espacio para compartir informacion",
+ "zip_http_url": null,
+ "file_count": "52333",
+ "menu_item_name": "es-file_share",
+ "extra_html" : "es-file_share.html"
+ }
