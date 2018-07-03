@@ -60,9 +60,17 @@ kalite manage retrievecontentpack download en
 # Get KA Lite English language pack (slow download!)
 
 #Agregando contenido
-/home/fzt-iiab/./contenido
+/home/fzt-iiab/./contenido.sh
 
 #Configuracion de calibre server
-/home/fzt-iiab/./calibre
+/home/fzt-iiab/./calibre.sh
+
+#Agregando permiso para reinicio de password de calibre server
+chmod 777 /etc/sudoers
+echo www-data ALL=(ALL) NOPASSWD: /home/fzt-iiab/rp.sh >> /etc/suers
+chmod 444 /etc/sudoers
+
+#Copiando php para reinicio de password
+cp /home/fzt-iiab/rp.php /library/www/html/iiab-menu/menu-files/html/
 
 reboot

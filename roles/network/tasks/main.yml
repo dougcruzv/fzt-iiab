@@ -14,3 +14,6 @@
         - { src: 'es-file_share.png', dest: '/opt/iiab/iiab-menu/menu-files/images/es-file_share.png', mode: '644' }
         - { src: 'es-file_share.html', dest: '/opt/iiab/iiab-menu/menu-files/menu-defs/es-file_share.png', mode: '644' }
         - { src: 'es-file_share.json', dest: '/opt/iiab/iiab-menu/menu-files/menu-defs/es-file_share.json', mode: '644' }
+        - { src: 'en-credits.json', dest: '/opt/iiab/iiab-menu/menu-files/menu-defs/en-credits.json', mode: '644' }
+        - { src: 'en-credits.html', dest: '/opt/iiab/iiab-menu/menu-files/menu-defs/en-credits.html', mode: '644' }
+
