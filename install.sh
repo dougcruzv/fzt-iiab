@@ -29,7 +29,7 @@ cd /opt/iiab/iiab/scripts/
 # ./ansible-2.5.x
 
 cd /home/fzt-iiab/
-./config
+./config.sh
 
 # In general please examine local_vars.yml carefully (and modify as nec)
 # before running Ansible (below, which can take ~2 hours the first time!)
