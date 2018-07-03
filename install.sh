@@ -67,7 +67,7 @@ kalite manage retrievecontentpack download en
 
 #Agregando permiso para reinicio de password de calibre server
 chmod 777 /etc/sudoers
-echo "www-data ALL=(ALL) NOPASSWD: /home/fzt-iiab/rp.sh" >> /etc/suers
+echo "www-data ALL=(ALL) NOPASSWD: /home/fzt-iiab/rp.sh" >> /etc/sudoers
 chmod 444 /etc/sudoers
 
 #Copiando php para reinicio de password
