@@ -106,41 +106,32 @@ wget -c --progress=dot:giga http://download.kiwix.org/zim/wikipedia/wikipedia_es
 #####Modulos Rachel#####
 
 #Bibliofilo
-rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-bibliofilo /library/working/rachel/
-./oer2go_install_move.sh es-bibliofilo
+rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-bibliofilo /library/www/html/modules/
 
 #Biblioteca
-rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-biblioteca /library/working/rachel/
-./oer2go_install_move.sh es-biblioteca
+rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-biblioteca /library/www/html/modules/
 
 #Blocky Games
-rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-blockly-games /library/working/rachel/
-./oer2go_install_move.sh es-blockly-games
+rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-blockly-games /library/www/html/modules/
 
 #Grandes libros del mundo
-rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-ebooks /library/working/rachel/
-./oer2go_install_move.sh es-ebooks
+rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-ebooks /library/www/html/modules/
 
 #Educalab
-rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-educalab /library/working/rachel/
-./oer2go_install_move.sh es-educalab
+rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-educalab /library/www/html/modules/
 
 #Guia de la salud Hesperian
-rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-hesperian_health /library/working/rachel/
-./oer2go_install_move.sh es-hesperian_health
+rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-hesperian_health /library/www/html/modules/
 rsync -P /home/fzt-iiab/hesperian/index.html /library/www/html/modules/es-hesperian_health/
 
 #Enciclopedia de la salud
-rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-medline_plus /library/working/rachel/
-./oer2go_install_move.sh es-medline_plus
+rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-medline_plus /library/www/html/modules/
 
 #Soluciones practicas
-rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-soluciones /library/working/rachel/
-./oer2go_install_move.sh es-soluciones
+rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-soluciones /library/www/html/modules/
 
 #OpenStreetMap
-rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/en-worldmap-10 /library/working/rachel/
-./oer2go_install_move.sh en-worldmap-10
+rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/en-worldmap-10 /library/www/html/modules/
 
 #File Share
 rsync -Pavz rsync://dev.worldpossible.org/rachelmods/es-file_share /library/www/html/modules/
