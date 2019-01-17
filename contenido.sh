@@ -11,12 +11,12 @@ unzip -uo /library/downloads/zims/kiwix-0.9+gutenberg_es_all_2014-10.zip -d /lib
 ./zim_install_step3.sh gutenberg_es_all_2014-10
 
 #Ecured
-wget -c --progress=dot:giga http://download.kiwix.org/zim/other/ecured_es_all_2018-04.zim -O /library/working/zims/ecured_es_all_2018-04.zim
-./zim_install_move.sh ecured_es_all_2018-04.zim
+#wget -c --progress=dot:giga http://download.kiwix.org/zim/other/ecured_es_all_2018-04.zim -O /library/working/zims/ecured_es_all_2018-04.zim
+#./zim_install_move.sh ecured_es_all_2018-04.zim
 
 #Phet
-wget -c --progress=dot:giga http://download.kiwix.org/zim/phet/phet_es-pe_2018-06.zim -O /library/working/zims/phet_es-pe_2018-06.zim
-./zim_install_move.sh phet_es-pe_2018-06.zim
+#wget -c --progress=dot:giga http://download.kiwix.org/zim/phet/phet_es-pe_2018-06.zim -O /library/working/zims/phet_es-pe_2018-06.zim
+#./zim_install_move.sh phet_es-pe_2018-06.zim
 
 wget -c --progress=dot:giga http://download.kiwix.org/zim/phet/phet_es_2018-06.zim -O /library/working/zims/phet_es_2018-06.zim
 ./zim_install_move.sh phet_es_2018-06.zim
@@ -106,29 +106,29 @@ wget -c --progress=dot:giga http://download.kiwix.org/zim/wikipedia/wikipedia_es
 #####Modulos Rachel#####
 
 #Bibliofilo
-rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-bibliofilo /library/www/html/modules/
+#rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-bibliofilo /library/www/html/modules/
 
 #Biblioteca
-rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-biblioteca /library/www/html/modules/
+#rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-biblioteca /library/www/html/modules/
 
 #Blocky Games
 rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-blockly-games /library/www/html/modules/
 
 #Grandes libros del mundo
-rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-ebooks /library/www/html/modules/
+#rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-ebooks /library/www/html/modules/
 
 #Educalab
-rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-educalab /library/www/html/modules/
+#rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-educalab /library/www/html/modules/
 
 #Guia de la salud Hesperian
-rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-hesperian_health /library/www/html/modules/
-rsync -P /home/fzt-iiab/hesperian/index.html /library/www/html/modules/es-hesperian_health/
+#rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-hesperian_health /library/www/html/modules/
+#rsync -P /home/fzt-iiab/hesperian/index.html /library/www/html/modules/es-hesperian_health/
 
 #Enciclopedia de la salud
-rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-medline_plus /library/www/html/modules/
+#rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-medline_plus /library/www/html/modules/
 
 #Soluciones practicas
-rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-soluciones /library/www/html/modules/
+#rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-soluciones /library/www/html/modules/
 
 #OpenStreetMap
 rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/en-worldmap-10 /library/www/html/modules/
@@ -137,7 +137,7 @@ rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/en-worldmap-10 
 rsync -Pavz rsync://dev.worldpossible.org/rachelmods/es-file_share /library/www/html/modules/
 
 #PhET
-rsync -Pavz rsync://dev.worldpossible.org/rachelmods/es-phet-zim /library/www/html/modules/
+#rsync -Pavz rsync://dev.worldpossible.org/rachelmods/es-phet-zim /library/www/html/modules/
 
 #GCF2015
-rsync -Pavz rsync://dev.worldpossible.org/rachelmods/es-GCF2015 /library/www/html/modules/
+#rsync -Pavz rsync://dev.worldpossible.org/rachelmods/es-GCF2015 /library/www/html/modules/
