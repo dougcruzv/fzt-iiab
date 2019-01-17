@@ -17,7 +17,7 @@ apt -y clean
 
 mkdir -p /opt/iiab
 cd /opt/iiab/
-git clone https://github.com/iiab/iiab -b release-6.5 --depth 1
+git clone https://github.com/iiab/iiab -b release-6.6 --depth 1
 git clone https://github.com/iiab/iiab-admin-console --depth 1
 git clone https://github.com/iiab/iiab-menu --depth 1
 git clone https://github.com/iiab/iiab-factory --depth 1
