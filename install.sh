@@ -16,6 +16,7 @@ apt -y clean
 # Above updates OS for security especially
 
 mkdir -p /opt/iiab
+mkdir /etc/iiab
 cd /opt/iiab/
 git clone https://github.com/iiab/iiab -b release-6.6 --depth 1
 git clone https://github.com/iiab/iiab-admin-console --depth 1
