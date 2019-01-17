@@ -7,7 +7,7 @@
         - { src: 'dhcpd-iiab.conf.j2-g', dest: '/opt/iiab/iiab/roles/network/templates/dhcp/dhcpd-iiab.conf.j2', mode: '0644' }
         - { src: 'named-iiab.conf.j2-g', dest: '/opt/iiab/iiab/roles/network/templates/gateway/named-iiab.conf.j2', mode: '0644' }
         - { src: 'iiab-gen-iptables-g', dest: '/opt/iiab/iiab/roles/network/templates/named/iiab-gen-iptables', mode: '755' }
-        - { src: 'local_vars.yml', dest: '/opt/iiab/iiab/vars/local_vars.yml', mode: '755' }
+        - { src: 'local_vars.yml', dest: '/etc/iiab/local_vars.yml', mode: '755' }
         - { src: 'sampler.html', dest: '/opt/iiab/iiab-menu/samples/sampler.html', mode: '755' }
         - { src: 'config.json', dest: '/opt/iiab/iiab-menu/config.json', mode: '755' }
         - { src: 'es-blockly_games.json', dest: '/opt/iiab/iiab-menu/menu-files/menu-defs/es-blockly_games.json', mode: '644' }
