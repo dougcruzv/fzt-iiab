@@ -1,0 +1,411 @@
+# WARNING: DO NOT MODIFY THIS FILE.
+# CHANGES WILL BE LOST IF YOU DO A GIT PULL OR FETCH.
+# Instead put changes in local_vars.yml which is not tracked by git:
+# http://wiki.iiab.io/local_vars.yml
+
+# By convention we use True/False to indicate boolean constants.
+
+# Installation Constants
+content_base: "/library"
+#doc_base: "/var"
+doc_base: "{{ content_base }}/www"
+doc_root: "{{ doc_base }}/html"
+
+iiab_base: /opt/iiab
+iiab_dir: "{{ iiab_base }}/iiab"
+pip_packages_dir: "{{ iiab_base }}/pip-packages"
+yum_packages_dir: "{{ iiab_base }}/yum-packages"
+downloads_dir: "{{ iiab_base }}/downloads"
+iiab_download_url: http://download.iiab.io/packages
+# Ansible's default timeout for "get_url:" downloads (10 seconds) often fails
+download_timeout: 200
+
+# Configuration File(s)
+iiab_config_file: /etc/iiab/iiab.ini
+service_filelist: "{{ iiab_config_file }}"
+
+# The following variable may be useful in debugging
+disregard_network: False  # use cache or error out if cache does not exist
+
+# Users and Passwords
+
+iiab_admin_user: iiab-admin
+# Obtain a password hash with:
+#    python -c 'import crypt; print crypt.crypt("<plaintext>", "$6$<salt>")'
+iiab_admin_passw_hash: $6$xsce51$D.IrrEeLBYIuJkGDmi27pZUGOwPFp98qpl3hxMwWV4hXigFGmdSvy3s/j7tn6OnyTTLmlV7SsN0lCUAFzxSop.
+admin_install: True
+
+# Set admin_install: False if you don't want iiab_admin_user & wheel group
+# auto-created in roles/iiab-admin/tasks/main.yml, thereby disabling sudo-based
+# warnings on use of published passwords like pi/raspberry & iiab-admin/g0adm1n
+
+# If admin_install: False, set iiab_admin_user (above) to an existing Linux
+# user that has sudo access, so you can login to Admin Console http://box/admin
+
+# Languages
+default_language: es
+language_priority: es en
+
+# Time Zone (php needs timezone to be set)
+local_tz: "{{ ansible_date_time.tz }}"
+
+# Read https://github.com/iiab/iiab/wiki/IIAB-Networking
+# Also readable offline @ http://box/info/IIAB-Networking.html
+
+# NETWORK PARAMETERS FOLLOW ACROSS THE NEXT 60 LINES, as enabled by Ansible's
+# NETWORK role (/opt/iiab/iiab/roles/network/*) in 4-SERVER-OPTIONS.
+
+iiab_hostname: box
+iiab_domain: lan
+lan_ip: 172.18.96.1
+lan_netmask: 255.255.224.0
+
+# Internal Wi-Fi Access Point
+# Values are used if there is an internal Wi-Fi adapter and hostapd is enabled
+# The platform variable adapts install to specific hardware (raspberry pi=rpi2)
+# Raspbian req WiFi country since March 2018.  CHANGE IT IN vars/local_vars.yml
+host_country_code: US
+host_ssid: "Internet in a Box"
+host_wifi_mode: g
+host_channel: 6
+hostapd_secure: False
+hostapd_password: changeme
+hostapd_enabled: True
+# Above is forcibly set to False (in roles/network/tasks/main.yml) if IIAB is
+# being WiFi-installed (run "iiab-hotspot-on" AFTER ./iiab-install completes
+# and content is downloaded, to enable the internal WiFi Access Point / AP!)
+reboot_to_AP: False
+# For those installing IIAB over WiFi: "reboot_to_AP: True" overrides the above
+# detection of WiFi-as-gateway, forcing "hostapd_enabled: True" regardless.
+
+# Gateway mode
+iiab_lan_enabled: True
+iiab_wan_enabled: True
+ssh_port: 22
+# Ties in what the user populated in the GUI for static WAN IP address info:
+gui_wan: True
+adm_cons_force_ssl: False
+adm_cons_allow_downloads: False
+
+# Gateway and Filters
+# Most all implementations set "iiab_gateway_enabled: False" within
+# local_vars.yml as they cannot afford Internet access for students
+# and teachers, and the many associated IT/support/training costs.
+iiab_gateway_enabled: True
+gw_squid_whitelist: False
+gw_block_https: False
+
+# dhcpd
+dhcpd_install: True
+dhcpd_enabled: False
+
+# named
+named_install: True
+named_enabled: True
+block_DNS: False
+
+# dnsmasq
+dnsmasq_install: False
+dnsmasq_enabled: False
+
+# Captive Portal highly experimental as of June 2018: https://github.com/iiab/iiab/issues/608
+captive_portal_install: False
+captive_portal_enabled: False
+
+# Squid
+squid_install: False
+squid_enabled: False
+
+# DansGuardian
+dansguardian_install: False
+dansguardian_enabled: False
+
+# Wonder Shaper
+# Unmaintained as of October 2017: https://github.com/iiab/iiab/pull/382
+wondershaper_install: False
+wondershaper_enabled: False
+
+# Intended for developers: ONLY CHANGE THESE IF YOU KNOW WHAT YOU ARE DOING
+# The following 2 override the detection when not "auto"
+user_wan_iface: auto
+user_lan_iface: auto
+wan_ip: dhcp
+wan_netmask:
+wan_gateway:
+wan_nameserver:
+# exFAT is auto-enabled for all "debuntu" OS's as of Nov 2017, in roles/2-common/tasks/packages.yml#L35-L36
+# exFAT_enabled: True
+
+# Parameters by Aggregate Roles
+# Each Role must have the following variables which are either True or False:
+#   <role-name>_install
+#   <role-name>_enabled
+
+# Our past convention was to install everything in all aggregates
+# And to enable everything in 1-PREP, 2-COMMON, and 3-BASE-SERVER
+
+# 1-PREP
+
+# Docker (lesser-supported)
+docker_install: False
+docker_enabled: False
+
+# SchoolTool - unmaintained
+schooltool_install: False
+schooltool_enabled: False
+
+# 2-COMMON
+
+# 3-BASE-SERVER
+
+# Needed if you want http://box/common/services/power_off.php to work
+allow_apache_sudo: False
+
+# roles/httpd runs here
+
+# roles/iiab-admin runs here
+
+# MySQL MANDATORY - THESE SETTINGS HAVE NO EFFECT - SEE roles/1-prep/tasks/computed_vars.yml, roles/mysql/tasks/main.yml
+mysql_install: True
+mysql_enabled: True
+# mysql_root_password: $6$iiab51$3ICIW0CLWxxMW2a3yrHZ38ukZItD5tcadL4rWcE9D.qIGStxhh8rRsaSxoj3b.MYxI/VRDNjpzSYK/V6zkWFI0
+mysql_root_password: fixmysql
+
+# 4-SERVER-OPTIONS
+
+# sshd
+sshd_enabled: True
+
+# OpenVPN
+vpn_presence: xscenet.net
+openvpn_server_port: 1194
+openvpn_cron_enabled: False
+openvpn_install: True
+openvpn_enabled: False
+
+# roles/network runs here (MANY SETTINGS ABOVE)
+
+# Homepage
+# Default to the GUI where the selection is made or override in local_vars.yml
+iiab_home_url: /home
+
+# You can change iiab_home_url in local_vars.yml in order to get a different
+# homepage.  For example one of the following: (assuming they are enabled)
+
+# iiab_home_url: /home
+# iiab_home_url: /wordpress
+# iiab_home_url: /wiki - either dokuwiki or mediawiki
+
+# PostgreSQL auto-installed by Moodle &/or Pathagar as nec, no need to touch!
+# roles/1-prep/tasks/computed_vars.yml, roles/4-server-options/tasks/main.yml
+postgresql_install: False
+postgresql_enabled: False
+
+# authserver
+authserver_install: False
+authserver_enabled: False
+
+# Common UNIX Printing System (CUPS)
+cups_install: True
+cups_enabled: False
+
+# Samba. Take a security audit seriously before deploying this.
+samba_install: False
+samba_enabled: False
+
+# usb-lib
+usb_lib_install: True
+usb_lib_enabled: True
+iiab_usb_lib_show_all: False
+
+# Toggle iiab-refresh-wiki-docs scraping for offline docs (http://box/info)
+nodocs: False
+
+# 5-XO-SERVICES
+
+# Lesser-supported XO services need additional testing.  Please contact
+# http://lists.laptop.org/pipermail/server-devel/ if you're able to help test.
+
+xo_services_install: False
+xo_services_enabled: False
+
+# activity-server
+activity_server_install: False
+activity_server_enabled: False
+
+# ejabberd-xs
+ejabberd_xs_install: False
+ejabberd_xs_enabled: False
+
+# idmgr
+idmgr_install: False
+idmgr_enables: False
+
+# 6-GENERIC-APPS
+
+# Calibre
+
+# WARNING: CALIBRE REQUIRES X WINDOWS / OPENGL LIBRARIES.  Consider installing
+# an OS that includes a GUI (desktop) environment if you need Calibre E-Books.
+
+calibre_install: True
+calibre_enabled: True
+# vars/raspbian-9.yml tries the .deb upgrade of Calibre, overriding this default:
+calibre_via_debs: False
+calibre_unstable_debs: False
+# vars/<most-OS's>.yml try the x86_64 python upgrade of Calibre, overriding this default:
+calibre_via_python: False
+# Change calibre_port to 8010 if you're using XO laptops needing above idmgr
+calibre_port: 8080
+# Change calibre to XYZ add your own mnemonic URL like: http://box/XYZ
+calibre_web_path: calibre  #NEEDS WORK: https://github.com/iiab/iiab/issues/529
+# In addition to: http://box/books box/libros box/livres box/livros box/liv
+
+# DokuWiki
+dokuwiki_install: False
+dokuwiki_enabled: False
+
+# MediaWiki
+mediawiki_install: False
+mediawiki_enabled: False
+
+# Elgg
+elgg_install: True
+elgg_enabled: False
+# elgg_mysql_password: $6$iiab51$jeTwnATcbaa92xo0QBTgjLBU.5aVDDrbKeNyyC99R/TAWz6pvfzj.L7lfnOVVjD78nxqT.gkNn6XZmuRV0W3o1
+elgg_mysql_password: elgg4kids
+
+# ejabberd
+ejabberd_install: False
+ejabberd_enabled: False
+
+# Nextcloud
+nextcloud_install: True
+nextcloud_enabled: False
+
+# ownCloud
+owncloud_install: False
+owncloud_enabled: False
+
+# WordPress
+wordpress_install: True
+wordpress_enabled: False
+
+# 7-EDU-APPS
+
+# KA Lite
+kalite_install: True
+kalite_root: "/library/ka-lite"
+kalite_user: kalite
+kalite_password_hash: $6$<salt>$KHET0XRRsgAY.wOWyTOI3W7dyDh0ESOr48uI5vtk2xdzsU7aw0TF4ZkNuM34RmHBGMJ1fTCmOyVobo0LOhBlJ/
+kalite_password: kalite
+kalite_server_name: kalite
+kalite_server_port: 8008
+kalite_enabled: False
+kalite_cron_enabled: False
+
+# Kiwix
+kiwix_install: True
+kiwix_enabled: True
+kiwix_port: 3000
+iiab_zim_path: /library/zims
+
+# Moodle
+moodle_install: False
+moodle_enabled: False
+
+# OpenStreetMap (OSM)
+osm_install: True
+osm_enabled: False
+# changed in June 2017 from:
+# iiab_install: True
+# iiab_enabled: False
+
+# Pathagar - similar to Calibre, but unmaintained
+pathagar_install: False
+pathagar_enabled: False
+
+# Sugarizer
+sugarizer_install: True
+sugarizer_enabled: False
+sugarizer_port: 8089
+
+# 8-MGMT-TOOLS
+
+# AWStats -- sumarizes http access logs
+awstats_install: True
+awstats_enabled: False
+
+# Monit
+monit_install: False
+monit_enabled: False
+watchdog:
+  - sshd
+  - idmgr
+  - ejabberd
+  - httpd
+  - postgresql
+  - squid
+
+# Munin
+munin_install: True
+munin_enabled: False
+
+# Handy for maintaining tables, but DANGEROUS if not locked down
+phpmyadmin_install: False
+phpmyadmin_enabled: False
+
+# sugar-stats - unmaintained
+sugar_stats_install: False
+sugar_stats_enabled: False
+
+# TeamViewer - unmaintained (better to install from http://teamviewer.com)
+teamviewer_install: False
+teamviewer_enabled: False
+
+# vnStat
+vnstat_install: True
+vnstat_enabled: False
+
+# XOVis - unmaintained
+xovis_install: False
+xovis_enabled: False
+xovis_target_host: "127.0.0.1:5984"
+xovis_deployment_name: olpc
+xovis_db_name: xovis
+xovis_db_user: admin
+xovis_db_password: admin
+
+xovis_root: "/opt/xovis"
+xovis_backup_dir: "/library/users"
+xovis_chart_heading: "My School: Usage Data Visualization"
+
+# ================================================================
+
+# Ajenti - unmaintained
+# ajenti_install: False
+# ajenti_enabled: False
+
+# RACHEL - no longer in use
+# rachel_install: False
+# rachel_enabled: False
+# rachel_content_found: False
+# #rachel_url: /rachel
+# rachel_doc_root: "{{ doc_root }}/modules"
+
+# ================================================================
+# Platforms - turn all off and let <OS>.yml turn on as appropriate
+
+# wide to narrow
+is_debuntu: False
+is_ubuntu: False
+is_ubuntu_16: False
+is_ubuntu_18: False
+is_debian: False
+is_debian_9: False
+is_debian_8: False
+is_rpi: False
+
+is_redhat: False
+is_fedora: False
+is_centos: False
