@@ -1,4 +1,4 @@
-#/bin/bash!
+#!/bin/bash
 
 apt update
 apt -y dist-upgrade
@@ -26,4 +26,15 @@ cd /opt/iiab/iiab/
 cd /opt/iiab/iiab-admin-console/
 ./install
 
+export KALITE_HOME=/library/ka-lite
+kalite manage generate_zone
+# Register with KA Lite - just the anonymous registration
+kalite manage retrievecontentpack download es
+kalite manage retrievecontentpack download en
+# Get KA Lite English language pack (slow download!)
 
+cp /home/fzt-iiab/config.json /library/www/html/js-menu/
+
+cp /home/fzt-iiab/menu.json /library/www/html/home/
+
+/home/fzt-iiab/./contenido.sh

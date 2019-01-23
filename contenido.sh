@@ -114,6 +114,9 @@ wget -c --progress=dot:giga http://download.kiwix.org/zim/wikipedia/wikipedia_es
 #Blocky Games
 rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-blockly-games /library/www/html/modules/
 
+#MIT Scracth
+rsync -Pavz rsync://dev.worldpossible.org/rachelmods/en-scratch /library/www/html/modules/
+
 #Grandes libros del mundo
 #rsync -Pavz --size-only rsync://dev.worldpossible.org/rachelmods/es-ebooks /library/www/html/modules/
 
