@@ -37,4 +37,48 @@ cp /home/fzt-iiab/config.json /library/www/html/js-menu/
 
 cp /home/fzt-iiab/menu.json /library/www/html/home/
 
-/home/fzt-iiab/./contenido.sh
+# Copia de openstreetmap
+#Comentar si no tienes el disco duro
+
+rsync -P /mnt/contenido2019/openstreetmap.tar.gz /library/www/html/modules/
+
+cd /library/www/html/modules/
+
+tar -zxvf openstreetmap.tar.gz
+
+rm openstreetmap.tar.gz
+
+#Copia de wikipedia
+#Comentar si no tienes el disco duro
+
+rsync -P /mnt/contenido2019/wikipedia.tar.gz /library/zims/content/
+
+cd /library/zims/content/
+
+tar -zxvf wikipedia.tar.gz
+
+rm wikipedia.tar.gz
+
+#Copia de ka-lite
+#Comentar si no tienes el disco duro
+
+rsync -P /mnt/contenido2019/kalite.tar.gz /library/ka-lite/content/
+
+cd /library/ka-lite/content/
+
+tar -zxvf kalite.tar.gz
+
+rm kalite.tar.gz
+
+#Copia de Blockly-games
+#Comentar si no tienes el disco duro
+
+rsync -rP /mnt/contenido2019/es-blockly-games /library/www/html/modules/
+
+#Copia de Scratch
+#Comentar si no tienes el disco duro
+
+rsync -rP /mnt/contenido2019/en-scratch /library/www/html/modules/
+
+
+#/home/fzt-iiab/./contenido.sh
