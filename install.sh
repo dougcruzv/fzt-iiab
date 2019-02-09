@@ -87,15 +87,3 @@ tar -zxvf kalite.tar.gz
 
 rm kalite.tar.gz
 
-#Copia de Blockly-games
-#Comentar si no tienes el disco duro
-
-#rsync -rP /mnt/contenido2019/es-blockly-games /library/www/html/modules/
-
-#Copia de Scratch
-#Comentar si no tienes el disco duro
-
-#rsync -rP /mnt/contenido2019/en-scratch /library/www/html/modules/
-
-
-#/home/fzt-iiab/./contenido.sh
