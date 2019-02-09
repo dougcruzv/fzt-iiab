@@ -35,8 +35,6 @@ kalite manage retrievecontentpack download en
 
 cp /home/fzt-iiab/config.json /library/www/html/js-menu/
 
-cp /home/fzt-iiab/menu.json /library/www/html/home/
-
 #Copia de contenido
 cd /home/fzt-iiab/
 ./contenido.sh

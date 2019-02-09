@@ -41,6 +41,8 @@ chmod 755 /opt/iiab/iiab-admin-console/roles/cmdsrv/files/scripts/*
 /opt/iiab/iiab-admin-console/roles/cmdsrv/files/scripts/./zim_install_move.sh wiktionary_es_all_novid_2018-10.zim
 /opt/iiab/iiab-admin-console/roles/cmdsrv/files/scripts/./zim_install_move.sh wikiquote_es_all_novid_2018-06.zim
 
+cp /home/fzt-iiab/menu.json /library/www/html/home/
+
 #Copia de ka-lite
 #Comentar si no tienes el disco duro
 
