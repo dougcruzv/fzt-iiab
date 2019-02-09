@@ -35,7 +35,7 @@ kalite manage retrievecontentpack download en
 
 cp /home/fzt-iiab/config.json /library/www/html/js-menu/
 
-#cp /home/fzt-iiab/menu.json /library/www/html/home/
+cp /home/fzt-iiab/menu.json /library/www/html/home/
 
 # Copia de openstreetmap
 #Comentar si no tienes el disco duro
@@ -47,8 +47,6 @@ rsync -P /mnt/contenido2019/wikipedia.tar.gz /library/working/zims/
 rsync -P /mnt/contenido2019/kalite.tar.gz /library/ka-lite/content/
 
 rsync -rP /mnt/contenido2019/es-blockly-games /library/www/html/modules/
-
-rsync -rP /mnt/contenido2019/en-scratch /library/www/html/modules/
 
 cd /library/www/html/modules/
 

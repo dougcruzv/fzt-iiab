@@ -1,1 +1,36 @@
-{"mobile_incl_extra_html": false, "mobile_header_font": "Open Sans", "mobile_incl_description": false, "desktop_incl_description": true, "tab_names": ["Main"], "force_mobile_layout": false, "menu_items_1": ["es-blockly_games", "es-blockly-games", "es-worldmap-10", "es-kalite", "en-scratch", "es-wiktionary_es_all_novid", "es-wiktionary_es_all", "es-wikivoyage_es_all_novid", "es-wikivoyage_es_all", "es-wikiversity_es_all_novid", "es-wikiversity_es_all", "es-wikisource_es_all_novid", "es-wikisource_es_all", "es-wikiquote_es_all_novid", "es-wikiquote_es_all", "es-wikipedia_es_medicine_novid_noapk", "es-wikipedia_es_medicine_novid", "es-wikipedia_es_medicine_has_vids", "es-wikipedia_es_medicine_apk", "es-wikipedia_es_medicine", "es-wikipedia_es_all_novid", "es-wikipedia_es_all_nopic", "es-wikipedia_es_all_mx", "es-wikipedia_es_all", "es-wikibooks_es_all", "es-wikibooks_es_all_novid", "es-wikihow", "en-sugarizer"], "menu_lang": "en", "multi_tab": false, "desktop_incl_extra_html": true, "debug": false, "poweroff_prompt": "Power Off", "desktop_header_font": "Open Sans", "allow_poweroff": true, "allow_kiwix_search": true}
+{
+  "force_mobile_layout": false, 
+  "poweroff_prompt": "Power Off", 
+  "mobile_header_font": "Open Sans", 
+  "mobile_incl_description": false, 
+  "autoupdate_menu": true, 
+  "desktop_incl_description": true, 
+  "mobile_incl_extra_html": false, 
+  "menu_items_1": [
+    "es-wikipedia_es_all_novid", 
+    "es-kalite", 
+    "es-blockly-games",
+    "es-sugarizer", 
+    "es-wiktionary_es_all_novid", 
+    "es-wikiquote_es_all_novid", 
+    "es-wikibooks_es_all_novid", 
+    "es-gutenberg_es_all", 
+    "sp-vikidia_es_all_novid", 
+    "es-wikivoyage_es_all_novid", 
+    "es-wikisource_es_all_novid", 
+    "sp-wikinews_es_all_novid", 
+    "es-wikiversity_es_all_novid", 
+    "es-wikipedia_es_medicine", 
+    "en-credits"
+  ], 
+  "menu_lang": "en", 
+  "multi_tab": false, 
+  "desktop_incl_extra_html": true, 
+  "debug": false, 
+  "tab_names": [
+    "Main"
+  ], 
+  "desktop_header_font": "Finger Paint", 
+  "allow_poweroff": true, 
+  "allow_kiwix_search": true
+}
